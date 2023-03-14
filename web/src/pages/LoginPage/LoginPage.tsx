@@ -30,7 +30,10 @@ const LoginPage = () => {
   }, [])
 
   const onSubmit = async (data: Record<string, string>) => {
-    const response = await logIn({ username: data.email, password: data.password })
+    const response = await logIn({
+      username: data.email,
+      password: data.password,
+    })
 
     if (response.message) {
       toast(response.message)
@@ -115,12 +118,6 @@ const LoginPage = () => {
                 </Form>
               </div>
             </div>
-          </div>
-          <div className="rw-login-link">
-            <span>Don&apos;t have an account?</span>{' '}
-            <Link to={routes.signup()} className="rw-link">
-              Sign up!
-            </Link>
           </div>
         </div>
       </main>
